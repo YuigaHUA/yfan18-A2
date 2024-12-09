@@ -1,4 +1,4 @@
-public class Person {
+public abstract class Person {
     private String name;
     private int age;
     private String gender;
@@ -17,7 +17,7 @@ public class Person {
         this.gender = gender;
     }
 
-    // Getter and Setter methods
+    // Getter and Setter methods for name
     public String getName() {
         return name;
     }
@@ -26,6 +26,7 @@ public class Person {
         this.name = name;
     }
 
+    // Getter and Setter methods for age
     public int getAge() {
         return age;
     }
@@ -34,6 +35,7 @@ public class Person {
         this.age = age;
     }
 
+    // Getter and Setter methods for gender
     public String getGender() {
         return gender;
     }
