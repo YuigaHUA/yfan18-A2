@@ -55,14 +55,12 @@ public class Ride implements RideInterface {
 
     // Implementing methods from RideInterface
 
-    // Method to add a visitor to the queue
     @Override
     public void addVisitorToQueue(Visitor visitor) {
         queue.add(visitor); // Add visitor to the queue
         System.out.println(visitor.getName() + " has joined the queue.");
     }
 
-    // Method to remove a visitor from the queue
     @Override
     public void removeVisitorFromQueue(Visitor visitor) {
         if (queue.remove(visitor)) { // Remove the visitor if found in the queue
@@ -72,16 +70,14 @@ public class Ride implements RideInterface {
         }
     }
 
-    // Method to print the list of visitors in the queue
     @Override
     public void printQueue() {
         System.out.println("Current visitors in the queue:");
-        for (Visitor visitor : queue) { // Iterate through the queue and print each visitor
+        for (Visitor visitor : queue) { // Print all visitors in the queue
             System.out.println(visitor.getName());
         }
     }
 
-    // Method to run the ride for one cycle and move visitors to history
     @Override
     public void runOneCycle() {
         if (operator == null) {
@@ -92,7 +88,7 @@ public class Ride implements RideInterface {
             System.out.println("No visitors in the queue. Ride cannot run.");
             return;
         }
-        int riders = Math.min(queue.size(), capacity); // Determine how many visitors can ride
+        int riders = Math.min(queue.size(), capacity); // Determine how many visitors can ride based on capacity
         System.out.println("Running one cycle of the ride. " + riders + " visitors are taking the ride.");
         for (int i = 0; i < riders; i++) {
             Visitor visitor = queue.poll(); // Remove visitor from the queue
@@ -101,30 +97,26 @@ public class Ride implements RideInterface {
         }
     }
 
-    // Method to add a visitor to the ride history (after taking the ride)
     @Override
     public void addVisitorToHistory(Visitor visitor) {
         rideHistory.add(visitor); // Add visitor to the history
         System.out.println(visitor.getName() + " has been added to the ride history.");
     }
 
-    // Method to check if a visitor has already taken the ride
     @Override
     public boolean checkVisitorFromHistory(Visitor visitor) {
-        return rideHistory.contains(visitor); // Check if visitor is in the ride history
+        return rideHistory.contains(visitor); // Check if the visitor has taken the ride before
     }
 
-    // Method to get the number of visitors who have taken the ride
     @Override
     public int numberOfVisitors() {
-        return rideHistory.size(); // Return the number of visitors in the ride history
+        return rideHistory.size(); // Return the number of visitors who have taken the ride
     }
 
-    // Method to print the ride history (list of visitors who have taken the ride)
     @Override
     public void printRideHistory() {
         System.out.println("Visitors who have taken the ride:");
-        for (Visitor visitor : rideHistory) { // Print each visitor in the ride history
+        for (Visitor visitor : rideHistory) { // Print all visitors who have taken the ride
             System.out.println(visitor.getName());
         }
     }

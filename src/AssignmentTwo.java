@@ -20,7 +20,10 @@ public class AssignmentTwo {
         // Run the ride for one cycle
         ride.runOneCycle();
 
-        // Print the ride history
+        // Print the ride history (who has taken the ride)
         ride.printRideHistory();
+
+        // Check if a specific visitor has taken the ride
+        System.out.println("Has Wang Wei taken the ride? " + ride.checkVisitorFromHistory(visitor1));
     }
 }
