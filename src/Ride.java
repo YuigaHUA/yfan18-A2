@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -119,5 +120,12 @@ public class Ride implements RideInterface {
         for (Visitor visitor : rideHistory) { // Print all visitors who have taken the ride
             System.out.println(visitor.getName());
         }
+    }
+
+    // Method to sort the visitors in the ride history using the custom comparator
+    public void sortRideHistory() {
+        Collections.sort(rideHistory, new VisitorComparator()); // Sort the ride history using the custom comparator
+        System.out.println("Sorted ride history:");
+        printRideHistory(); // Print the sorted list
     }
 }
