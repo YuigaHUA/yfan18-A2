@@ -3,18 +3,17 @@ public class AssignmentTwo {
     public static void main(String[] args) {
         // Create an instance of AssignmentTwo to call each part's method
         AssignmentTwo assignment = new AssignmentTwo();
-        
-        // assignment.partThree();  // Run Part 3
-        // assignment.partFourA();  // Run Part 4A
-        // assignment.partFourB();  // Run Part 4B
-        // assignment.partFive();   // Run Part 5
-        // assignment.partSix();    // Run Part 6
-        // assignment.partSeven();  // Run Part 7
+        assignment.partThree();
+        assignment.partFourA();
+        assignment.partFourB();
+        assignment.partFive();
+        assignment.partSix();
+        assignment.partSeven();
     }
 
-    // Part 3: Test health data from the health platform and wearable devices
+    // Part 3: Test health data from the health platform and check visitor health
     public void partThree() {
-        // Create simulated Health Platform and Wearable Device API objects
+        // Assuming you have created the HealthPlatformAPI and WearableDeviceAPI objects
         HealthPlatformAPI healthAPI = new HealthPlatformAPIImpl();
         WearableDeviceAPI wearableAPI = new WearableDeviceAPIImpl();
 
@@ -35,7 +34,7 @@ public class AssignmentTwo {
 
     // Part 4A: Test visitor health data and manage visitor history
     public void partFourA() {
-        // Create Employee and Ride objects
+        // Create an Employee and Ride object
         Employee emp = new Employee("Li Mei", 30, "Female", "Ride Operator", 1001);
         HealthPlatformAPI healthAPI = new HealthPlatformAPIImpl();
         WearableDeviceAPI wearableAPI = new WearableDeviceAPIImpl();
@@ -103,9 +102,9 @@ public class AssignmentTwo {
         ride.printRideHistory();
     }
 
-    // Part 6: Integrating with the health platform and wearable devices
+    // Part 6: Integrate with health platform and wearable devices
     public void partSix() {
-        // Create Health Platform and Wearable Device API objects
+        // Create HealthPlatform and WearableDevice API objects
         HealthPlatformAPI healthAPI = new HealthPlatformAPIImpl();
         WearableDeviceAPI wearableAPI = new WearableDeviceAPIImpl();
 
@@ -123,7 +122,7 @@ public class AssignmentTwo {
         System.out.println("Blood Pressure: " + bloodPressure);
         System.out.println("Oxygen Level: " + oxygenLevel + "%");
 
-        // Create Ride object and run the ride
+        // Create Ride object and run the ride for one cycle
         Employee emp = new Employee("Li Mei", 30, "Female", "Ride Operator", 1001);
         Ride ride = new Ride("Dragon Roller Coaster", 10, emp, healthAPI, wearableAPI);
         ride.addVisitorToQueue(visitor1);
@@ -155,7 +154,7 @@ public class AssignmentTwo {
         // Visualize the ride data
         ride.visualizeData();
         
-        // Generate a report
+        // Generate a detailed report
         ride.generateReport("RideReport.txt");
     }
 }
